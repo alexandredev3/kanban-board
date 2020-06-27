@@ -72,9 +72,16 @@ body {
   background: #ff0000;
 }
 
+.highlight {
+  background: #FC3C3C11;
+}
+
+.card, .dropzone {
+  transition: all 400ms;
+}
+
 @media screen and (max-width: 1054px) {
   .boards {
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
   }
 }

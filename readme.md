@@ -16,7 +16,9 @@
 
   dragend -> Quando o "Arrastamento" estiver terminado.
 
-  dragenter -> Quando ele entrar na zona
+  dragenter -> Quando ele entrar na zona.
+
+  dragover -> Quando o elemento estiver na zona.
 
   dragleave -> Quando ele sair da zona onde ele estava.
 
