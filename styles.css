@@ -18,8 +18,7 @@ body {
 
 .boards {
   display: flex;
-  justify-content: space-between;
-
+  
   margin-top: 32px;
 }
 
@@ -28,7 +27,7 @@ body {
   border: 1px solid #FC3C3C11;
   border-radius: 4px;
 
-  margin: 16px auto;
+  margin: 16px 24px;
 }
 
 .boards .board h3 {
@@ -38,8 +37,39 @@ body {
 
 .boards .board .dropzone {
   padding: 16px;
-  min-width: 332px;
+  min-width: 322px;
   min-height: 200px;
+}
+
+.boards .board .dropzone .card {
+  padding: 16px;
+  box-shadow: 0 2px 2px -1px #FC3C3Ccc;
+
+  max-width: 254px;
+  width: 100%;
+  margin: 25px 0;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  background: #363b41;
+}
+
+.dropzone .card .status {
+  width: 15%;
+  height: 8px;
+  background: gray;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.dropzone .card .status.green {
+  background: #23d2ac;
+}
+.dropzone .card .status.blue {
+  background: #33adff;
+}
+.dropzone .card .status.red {
+  background: #ff0000;
 }
 
 @media screen and (max-width: 1054px) {
