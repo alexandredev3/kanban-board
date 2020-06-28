@@ -2,7 +2,6 @@
   Kanban Board
 </h1>
 <h3 align="center">Aplicação onde você pode colocar uma lista de coisas que você precisa fazer, coisas que você está fazendo, e coisas que você já fez, usando o conceito de "Drag And Drop".</h3>
-<h4 align="center">Ainda falta criar um Form para adcionar um novo cardão...</h4>
 
 <p align="center">
   <a href="https://github.com/alexandredev3" target="_blank">
@@ -18,7 +17,7 @@
  </p>
 
 <h1>
-  <img src="https://github.com/alexandredev3/kanban-board/blob/master/interface-image.png"/>
+  <img src="https://github.com/alexandredev3/kanban-board/blob/master/kanban-image.png"/>
 </h1>
 
 ## :computer: Languages
