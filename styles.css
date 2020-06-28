@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
 
+  outline: 0  ;
+
   box-sizing: border-box;
 }
 
@@ -78,6 +80,44 @@ body {
 
 .card, .dropzone {
   transition: all 400ms;
+}
+
+.form form {
+  display: flex;
+  align-items: center;
+}
+
+.form input {
+  width: 248px;
+  height: 48px;
+  margin-left: 24px;
+  border: 0;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 4px;
+  background: #30353b;
+  box-shadow: 0 2px 2px -1px #FC3C3Ccc;
+  color: #fff;
+}
+
+.form form button {
+  width: 88px;
+  height: 48px;
+  margin-left: 10px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #30353b;
+  box-shadow: 0 2px 2px -1px #FC3C3Ccc;
+  transition: all 200ms;
+}
+
+.form form button:hover {
+  opacity: 0.8;
+}
+
+.form form button svg {
+  color: #FC3C3Ccc;
 }
 
 @media screen and (max-width: 1054px) {

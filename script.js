@@ -1,44 +1,68 @@
-/**help */
-function log(message) {
-  console.log('>' + message);
-};
-
-/** app */
-const cards = document.querySelectorAll('.card');
+0/** app */
+const cardElements = document.querySelectorAll('.card');
+const dropzoneContainer = document.querySelector('.dropzone');
 // Ele vai pegar todos os elementos que tem a classe .cards;
+const input = document.querySelector('input');
+const button = document.querySelector('button');
 const dropzones = document.querySelectorAll('.dropzone');
 
-/* Cards */
-cards.forEach(card => {
-// para cada card...
-  card.addEventListener('dragstart', dragstart)
-  card.addEventListener('drag', drag)
-  card.addEventListener('dragend', dragend)
-});
+const cards = JSON.parse(localStorage.getItem('card_list')) || [];
 
-function dragstart() {
-  //this = card.
-  // log('Card: Start dragging');
-  dropzones.forEach(dropzone => dropzone.classList.add('highlight'));
+button.addEventListener('click', event => event.preventDefault())
 
-  this.classList.add('is-dragging');
-  this.style.cursor = 'move';
-  this.style.opacity = '0.5';
+function renderCards() {
+  dropzoneContainer.innerHTML = '';
+
+  for (let card of cards) {
+    const cardElement = document.createElement('div');
+    const cardText = document.createTextNode(card);
+
+    cardElement.setAttribute('class', 'card');
+    cardElement.setAttribute('draggable', 'true')
+    
+    cardElement.appendChild(cardText);
+    dropzoneContainer.appendChild(cardElement);
+
+    cardElement.addEventListener('dragstart', dragstart)
+    cardElement.addEventListener('drag', drag)
+    cardElement.addEventListener('dragend', dragend)
+
+    function dragstart() {
+      //this = card.
+      // log('Card: Start dragging');
+      dropzones.forEach(dropzone => dropzone.classList.add('highlight'));
+    
+      this.classList.add('is-dragging');
+      this.style.cursor = 'move';
+      this.style.opacity = '0.5';
+    };
+    
+    function drag() {
+      // log('Card: is dragging');
+    };
+    
+    function dragend() {
+      // log('Card: Stop drag');
+      dropzones.forEach(dropzone => dropzone.classList.remove('highlight'));
+    
+      this.classList.remove('is-dragging');
+      this.removeAttribute('style');
+    };
+  }
+}
+
+renderCards();
+
+function addCard() {
+  const cardText = input.value;
+
+  cards.push(cardText);
+  input.value = '';
+  renderCards();
+  saveToStorage();
 };
 
-function drag() {
-  // log('Card: is dragging');
-};
-
-function dragend() {
-  // log('Card: Stop drag');
-  dropzones.forEach(dropzone => dropzone.classList.remove('highlight'));
-
-  this.classList.remove('is-dragging');
-  this.removeAttribute('style');
-};
-
-/* Feature Drog Cards */
+button.onclick = addCard;
 
 dropzones.forEach(dropzone => {
   dropzone.addEventListener('dragenter', dragenter);
@@ -76,3 +100,7 @@ function drop() {
   // log('Dropzone: Dropped');
   this.removeAttribute('style');
 };
+
+function saveToStorage() {
+  localStorage.setItem('card_list', JSON.stringify(cards));
+}
