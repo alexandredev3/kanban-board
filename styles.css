@@ -120,6 +120,11 @@ body {
   color: #FC3C3Ccc;
 }
 
+.form span {
+  margin: 28px;
+  font-size: 1.1em;
+}
+
 @media screen and (max-width: 1054px) {
   .boards {
     display: inline-block;

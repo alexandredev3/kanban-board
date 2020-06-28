@@ -56,6 +56,10 @@ renderCards();
 function addCard() {
   const cardText = input.value;
 
+  if (cardText.length === 0) {
+    return alert('Campo obrigatório!')
+  }
+
   cards.push(cardText);
   input.value = '';
   renderCards();
