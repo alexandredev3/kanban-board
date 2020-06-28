@@ -17,7 +17,7 @@
  </p>
 
 <h1>
-  <img src="https://github.com/alexandredev3/kanban-board/blob/master/kanban-image.png"/>
+  <img src="https://github.com/alexandredev3/kanban-board/blob/master/kanban-interface-image.png"/>
 </h1>
 
 ## :computer: Languages
