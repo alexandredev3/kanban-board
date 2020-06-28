@@ -8,8 +8,6 @@ const dropzones = document.querySelectorAll('.dropzone');
 
 const cards = JSON.parse(localStorage.getItem('card_list')) || [];
 
-button.addEventListener('click', event => event.preventDefault())
-
 function renderCards() {
   dropzoneContainer.innerHTML = '';
 
