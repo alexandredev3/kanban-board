@@ -85,6 +85,7 @@ body {
 .form form {
   display: flex;
   align-items: center;
+  margin-top: 32px;
 }
 
 .form input {
@@ -101,7 +102,7 @@ body {
 }
 
 .form form button {
-  width: 88px;
+  width: 62px;
   height: 48px;
   margin-left: 10px;
   border: 0;
@@ -123,6 +124,10 @@ body {
 .form span {
   margin: 28px;
   font-size: 1.1em;
+}
+
+.form input::placeholder {
+  color: #FC3C3C88;
 }
 
 @media screen and (max-width: 1054px) {

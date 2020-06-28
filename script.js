@@ -1,14 +1,13 @@
-0/** app */
+/** app */
 const cardElements = document.querySelectorAll('.card');
 const dropzoneContainer = document.querySelector('.dropzone');
 // Ele vai pegar todos os elementos que tem a classe .cards;
 const input = document.querySelector('input');
-const button = document.querySelector('button');
+const buttonAdd = document.querySelector('.add');
+const buttonRemove = document.querySelector('.remove');
 const dropzones = document.querySelectorAll('.dropzone');
 
 const cards = JSON.parse(localStorage.getItem('card_list')) || [];
-
-button.addEventListener('click', event => event.preventDefault())
 
 function renderCards() {
   dropzoneContainer.innerHTML = '';
@@ -63,10 +62,16 @@ function addCard() {
   cards.push(cardText);
   input.value = '';
   renderCards();
-  saveToStorage();
+  saveCardsToStorage();
 };
 
-button.onclick = addCard;
+buttonAdd.onclick = addCard;
+
+function removeAllCards() {
+  localStorage.clear();
+};
+
+buttonRemove.onclick = removeAllCards;
 
 dropzones.forEach(dropzone => {
   dropzone.addEventListener('dragenter', dragenter);
@@ -105,6 +110,6 @@ function drop() {
   this.removeAttribute('style');
 };
 
-function saveToStorage() {
+function saveCardsToStorage() {
   localStorage.setItem('card_list', JSON.stringify(cards));
 }
